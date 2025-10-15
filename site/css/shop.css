@@ -1,0 +1,39 @@
+    :root{--muted:#f3f3f3;--accent:#111;--small:12px}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;color:var(--accent);background:white}
+    header{padding:28px 40px;display:flex;justify-content:space-between;align-items:center}
+    .brand{font-family:Playfair Display,serif;letter-spacing:2px;text-transform:none;font-size:18px}
+    nav{font-size:14px}
+    nav a{color:#666;text-decoration:none;margin-left:22px}
+    nav a.active{color:#111;font-weight:600}
+
+    main{max-width:1100px;margin:40px auto;padding:60px;background:var(--muted);min-height:60vh}
+    .title{font-family:Playfair Display,serif;text-align:center;letter-spacing:3px;font-size:20px;margin:0 0 18px}
+    .subtitle{font-size:14px;text-align:center;color:#666;margin-bottom:36px}
+
+    .center-block{max-width:520px;margin:0 auto;text-align:center}
+    .address{font-size:13px;color:#444;line-height:1.5;margin-bottom:18px}
+    .address a{color:#0a58ca;text-decoration:underline}
+    .meta{font-size:12px;color:#777;margin-bottom:8px}
+
+    .centered-map {
+        /* Робить карту адаптивною в межах контейнера */
+        width: 100%; 
+        max-width: 600px; /* <--- Максимальна ширина для великих екранів */
+        height: 450px; /* Висоту можна залишити фіксованою */
+
+        /* Центрування */
+        margin: 0 auto;
+        display: block; 
+    }   
+
+    .store-photo{margin:28px auto 12px;display:block;max-width:520px}
+    .insta{display:block;margin:26px auto 0;width:36px;height:36px;border-radius:999px;border:2px solid #111;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--accent)}
+
+    footer{padding:18px 40px;text-align:center;color:#999;font-size:13px}
+
+    /* hover helper so on hover user sees mailto hint */
+    .mailto{position:relative}
+    .mailto:hover::after{content:'Написати поштою';position:absolute;left:50%;transform:translateX(-50%);bottom:-22px;background:#111;color:#fff;padding:6px 8px;border-radius:4px;font-size:11px}
+
+    @media (max-width:640px){main{padding:28px 18px} .center-block{padding:0 12px}}

@@ -1,0 +1,186 @@
+    :root{
+      --gap:24px;
+      --bg:#ffffff;
+      --muted:#f7f7f7;
+      --accent:#111;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--accent);
+    }
+
+    header{padding:28px 40px;display:flex;justify-content:space-between;align-items:center}
+    .brand{font-family:Playfair Display,serif;letter-spacing:6px;font-size:18px}
+    nav{font-size:14px}
+    nav a{color:#666;text-decoration:none;margin-left:22px}
+    nav a.active{color:#b33;font-weight:600}
+
+    main{max-width:1200px;margin:40px auto;padding:10px 20px}
+    h1.title{font-family:Playfair Display,serif;text-align:center;letter-spacing:8px;font-size:26px;margin:10px 0 28px}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:var(--gap);
+      align-items:stretch;
+    }
+
+    /* Each cell keeps aspect ratio by using an inner box with overflow:hidden */
+    .cell{
+      background:var(--muted);
+      overflow:hidden;
+      position:relative;
+      border:1px solid rgba(0,0,0,0.04);
+      min-height:360px; /* adjust as desired */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .cell .img-wrap{
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      display:block;
+      position:relative;
+    }
+
+    .cell img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition: transform 300ms cubic-bezier(.2,.8,.25,1);
+      transform-origin:center center;
+      will-change:transform;
+      pointer-events: none; /* clicks are handled on .cell */
+    }
+
+    /* hover: slight scale but contained by overflow:hidden */
+    .cell:hover img{
+      transform:scale(1.06);
+    }
+
+    /* Responsive: 2 columns under 980px, 1 column under 560px */
+    @media (max-width:980px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .cell{min-height:320px}
+    }
+    @media (max-width:560px){
+      .grid{grid-template-columns:repeat(1,1fr)}
+      .cell{min-height:220px}
+    }
+
+    /* Lightbox styles */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,0.85);
+      z-index:1200;
+    }
+    .lightbox[aria-hidden="false"]{display:flex}
+    .lb-inner{
+      width:90%;
+      max-width:1200px;
+      max-height:90vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .lb-content{
+      max-width:100%;
+      max-height:100%;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .lb-content img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+      display:block;
+    }
+
+    .lb-close, .lb-prev, .lb-next{
+      position:absolute;
+      background:transparent;
+      border:0;
+      color:white;
+      font-size:34px;
+      cursor:pointer;
+      padding:10px;
+      line-height:1;
+      transition:opacity .15s;
+    }
+    .lb-close{top:12px;right:12px;font-size:28px}
+    .lb-prev{left:6px}
+    .lb-next{right:6px}
+    .lb-close:hover, .lb-prev:hover, .lb-next:hover{opacity:0.85}
+
+    /* small caption area (optional) */
+    .lb-caption{
+      position:absolute;
+      bottom:12px;
+      left:50%;
+      transform:translateX(-50%);
+      color:#eee;
+      font-size:14px;
+      background:rgba(0,0,0,0.35);
+      padding:6px 10px;
+      border-radius:6px;
+    }
+
+    /* keyboard hint */
+    .hint{margin-top:10px;text-align:center;color:#888;font-size:13px}
+  
+    .cell {
+      border: none;                 /* прибираємо рамку */
+      box-shadow: none;             /* без тіні */
+      background: transparent;      /* без фону, щоб не було 'рамки' */
+      overflow: hidden;             /* важливо: зберігає зум в межах ячейки */
+    }
+
+    /* Обгортка зображення - не змінює розміри контейнера */
+    .cell .img-wrap {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: hidden;
+      transform: translateZ(0);     /* прискорює рендерінг на деяких браузерах */
+    }
+
+    /* Саме зображення: плавний перехід, більший зум, при наведенні масштаб */
+    .cell img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 900ms cubic-bezier(.2,.8,.25,1), filter 900ms ease;
+      transform-origin: center center;
+      /* allow clicks through img? НЕ треба pointer-events:none, інакше кліки на зображенні не спрацюють */
+      pointer-events: auto;
+    }
+
+    /* Ховер: трохи сильніший зум і легке затемнення для глибини */
+    .cell:hover img,
+    .cell:focus-within img {
+      transform: scale(1.14); /* ~14% збільшення */
+      filter: brightness(0.98);
+    }
+
+    /* Якщо хочеш трохи плавніший «відскік» при закінченні hover — додай */
+    .cell img {
+      will-change: transform;
+    }
+
+    /* Для мобільних з touch: не застосовувати надто великий зум (щоб не викликати лаг) */
+    @media (max-width:560px){
+      .cell:hover img{ transform: scale(1.08); }
+    }
