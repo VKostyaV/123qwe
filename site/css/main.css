@@ -32,8 +32,8 @@ body{
 
 /* --- Налаштовувані змінні для шапки --- */
 :root{
-  --header-height: 76px;        /* висота шапки — підкоригуй за потреби */
-  --header-side-pad: 60px;      /* відступи від країв — збільшує "вільний простір" */
+  --header-height: 76px;        /* висота шапки */
+  --header-side-pad: 0px;      /* відступи від країв */
 }
 
 /* --- Шапка сайту (оновлена) --- */
@@ -220,3 +220,132 @@ a:focus{ outline:2px solid rgba(0,0,0,0.06); outline-offset:3px; }
 
 /* ----- Додатково: плавне скролювання (гарніша навігація) ----- */
 html{ scroll-behavior:smooth; }
+
+/* container */
+#slider.slider { position: relative; max-width: 1100px; margin: 0 auto; }
+
+/* controls above slides */
+#slider .controls {
+  position: absolute;
+  left: 0; right: 0; top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; /* allow slides below to receive pointer except buttons */
+  z-index: 40; /* above slides */
+  padding: 0 24px;
+}
+#slider .controls .btn {
+  pointer-events: auto; /* buttons accept clicks */
+  background: transparent;
+  border: none;
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+  transition: transform .12s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+#slider .controls .btn:active { transform: scale(.96); }
+
+/* slides */
+#slider .slides { position: relative; min-height: 380px; }
+#slider .slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+  padding: 28px;
+  box-sizing: border-box;
+  z-index: 10;
+  background: transparent;
+  pointer-events: auto;
+}
+#slider .slide.active {
+  display: block;
+  position: relative;
+  z-index: 20;
+}
+
+/* image/text/video sizing (centered) */
+#slider .slide .img { display: block; max-width: 540px; width: 50%; margin: 0 auto; }
+#slider .slide .text { max-width: 900px; margin: 0 auto; font-family: "Times New Roman", Times, serif; font-weight: 700; line-height: 1.35; color: #222; text-align: justify; }
+#slider .slide .video-wrap { display: flex; justify-content: center; align-items: center; }
+#slider .slide iframe { width: 80%; height: 480px; border: 0; }
+
+/* dots */
+#slider .dots { display:flex; justify-content:center; gap:8px; margin-top:18px; z-index:50; position: relative; }
+#slider .dots .dot { width:12px; height:12px; border-radius:50%; background:#bbb; border:none; cursor:pointer; -webkit-appearance:none; appearance:none; }
+#slider .dots .dot.active { background:#222; }
+
+/* ----- Lightbox/modal rules (scoped to avoid conflicts) ----- */
+#lightbox.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.86);
+  z-index: 99999;
+  padding: 28px;
+  box-sizing: border-box;
+}
+#lightbox[aria-hidden="false"] { display: flex; }
+
+#lightbox .lb-top { position: absolute; top: 14px; right: 14px; display:flex; gap:8px; z-index:100000; }
+#lightbox .lb-btn {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor:pointer;
+  -webkit-appearance:none;
+  appearance:none;
+}
+#lightbox .lb-btn:active { transform: scale(.98); }
+
+#lightbox .lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 42px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-appearance:none;
+  appearance:none;
+  z-index: 100000;
+}
+#lightbox .lb-left { left: 12px; }
+#lightbox .lb-right { right: 12px; }
+
+#lightbox .lb-body {
+  max-width: 92%;
+  max-height: 92%;
+  overflow: auto;
+  color: #fff;
+  text-align: center;
+}
+#lightbox .lb-body img { max-width: 100%; height: auto; display:block; margin: 0 auto; }
+#lightbox .lb-text-wrap { color:#fff; font-family: "Times New Roman", Times, serif; font-weight:700; line-height:1.36; text-align:justify; padding: 18px; max-width: 980px; margin: 0 auto; }
+#lightbox .lb-video-wrap iframe { width: 100%; height: 72vh; max-height: 900px; border:0; display:block; }
+
+/* responsive tweaks */
+@media (max-width: 900px){
+  #slider .slide .img { width: 100%; max-width: 100%; }
+  #slider .slide iframe { width: 100%; height: 260px; }
+  #lightbox .lb-video-wrap iframe { height: 52vh; }
+}
