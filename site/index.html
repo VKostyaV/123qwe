@@ -4,62 +4,55 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Рік Оуенс — Головна</title>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">R. O. | Дизайнер</div>
-    <nav class="main-nav" aria-label="Головне меню">
-      <a class="nav-item active" data-page="home"  href="#">Головна</a>
-      <a class="nav-item" data-page="muses" href="..\site\muses\muses.html">Музи</a>
-      <a class="nav-item" data-page="shows" href="..\site\shows\show.html">Покази</a>
-      <a class="nav-item" data-page="shop" href="..\site\shop\shop.html">Магазин</a>
-      <a class="nav-item" data-page="about" href="..\site\about the author\AtA.html">Про автора</a>
-    </nav>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="logo">R. O. | Дизайнер</div>
+      <nav class="main-nav" aria-label="Головне меню">
+        <a class="nav-item" href="index.html">Головна</a>
+        <a class="nav-item" href="muses/muses.html">Музи</a>
+        <a class="nav-item" href="shows/show.html">Покази</a>
+        <a class="nav-item" href="shop/shop.html">Магазин</a>
+        <a class="nav-item" href="about the author/AtA.html">Про автора</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="hero">
-    <div class="hero-inner">
-      <div id="slider" class="slider" aria-roledescription="carousel">
-        <div class="controls">
-          <button id="prev" class="btn arrow" aria-label="Попередній">‹</button>
-          <button id="next" class="btn arrow" aria-label="Наступний">›</button>
-        </div>
-
-        <div id="slides" class="slides" role="region" aria-label="Слайди">
-          <!-- Slides injected by JS OR you can keep them static here -->
-        </div>
-
-        <div id="dots" class="dots" role="tablist" aria-label="Індикатори"></div>
-      </div>
-
-      <div class="hint">Клікніть на зображення/текст/відео щоб збільшити</div>
-    </div>
+  <main class="hero container">
+    <script src="js/slider.js" defer></script>
+    <!-- твій fullscreenchange-скрипт: теж обгорнути в DOMContentLoaded або теж defer -->
+    <script>
+      document.addEventListener('DOMContentLoaded', ()=> {
+      document.addEventListener("fullscreenchange", () => {
+        const textBlocks = document.querySelectorAll("h2, p");
+        if (document.fullscreenElement) {
+          textBlocks.forEach(el => el.style.color = "white");
+        } else {
+          textBlocks.forEach(el => el.style.color = "black");
+        }
+      });
+    });
+    </script>
   </main>
 
-  <!-- Lightbox / Modal -->
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <div class="lb-top">
-      <button id="lb-full" class="lb-btn" title="Fullscreen">⤢</button>
-      <button id="lb-close" class="lb-btn" title="Закрити">✕</button>
-    </div>
-    <button id="lb-prev" class="lb-nav lb-left" aria-label="Попередній">‹</button>
-    <div id="lb-body" class="lb-body" role="dialog" aria-modal="true"></div>
-    <button id="lb-next" class="lb-nav lb-right" aria-label="Наступний">›</button>
-  </div>
+  <footer class="site-footer">© Rick Owens — Головна</footer>
 
-  <script src="js/slider.js"></script>
-  
+  <!-- скрипт для активного пункту меню -->
   <script>
-  document.addEventListener("fullscreenchange", () => {
-    const textBlocks = document.querySelectorAll("h2, p"); // усі текстові елементи
-    if (document.fullscreenElement) {
-      textBlocks.forEach(el => el.style.color = "white"); // у fullscreen — білий
-    } else {
-      textBlocks.forEach(el => el.style.color = "black"); // повернення до чорного
-    }
-  });
-</script>
-
+  (function(){
+    const links = document.querySelectorAll('.main-nav a');
+    const path = location.pathname.split('/').pop().toLowerCase();
+    links.forEach(a=>{
+      const href = a.getAttribute('href').split('/').pop().toLowerCase();
+      if(href === path || (href === '' && (path === 'index.html' || path === ''))) {
+        a.classList.add('active');
+      } else a.classList.remove('active');
+    });
+  })();
+  </script>
+  
 </body>
 </html>
+

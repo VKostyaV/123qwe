@@ -4,47 +4,59 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Покази — Rick Owens</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/show.css">
-  
+  <link rel="stylesheet" href="../css/main.css">
 </head>
-
 <body>
-
-  <header>
-    <div class="brand">R. O. | Дизайнер</div>
-    <nav aria-label="Головне меню">
-      <a href="..\index.html">Головна</a>
-      <a href="..\muses\muses.html">Музи</a>
-      <a href="#" class="active">Покази</a>
-      <a href="..\shop\shop.html">Магазин</a>
-      <a href="..\about the author\AtA.html">Про автора</a>
-    </nav>
+  <header class="site-header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="logo">R. O. | Дизайнер</div>
+      <nav class="main-nav" aria-label="Головне меню">
+        <a href="../index.html">Головна</a>
+        <a href="../muses/muses.html">Музи</a>
+        <a href="show.html">Покази</a>
+        <a href="../shop/shop.html">Магазин</a>
+        <a href="../about the author/AtA.html">Про автора</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h1>П О К А З И</h1>
+  <main class="container">
+    <h1 class="page-title">П О К А З И</h1>
 
     <div class="grid">
-      <a class="cell" href="https://youtu.be/gwK2ED6udSg?si=2WpDShM1FQVsLV17" target="_blank"><img src="..\images\s1.png" alt="Показ 1"></a>
-      <a class="cell" href="https://youtu.be/Ocoumznrwzg?si=EqKBN3PuR8ga2SSq" target="_blank"><img src="..\images\s2.png" alt="Показ 2"></a>
-      <a class="cell" href="https://youtu.be/KeLSMmprpCU?si=SMNw87cnAmzvAXo2" target="_blank"><img src="..\images\s3.png" alt="Показ 3"></a>
-      <a class="cell" href="https://youtu.be/DH0MzbDxbLY?si=rqnyfgOj5IBgMDqu" target="_blank"><img src="..\images\s4.png" alt="Показ 4"></a>
-      <a class="cell" href="https://youtu.be/2MgE3Im8eZY?si=Q3n4xXAaJNXL98P1" target="_blank"><img src="..\images\s5.png" alt="Показ 5"></a>
-      <a class="cell" href="https://youtu.be/KsZOwn_PG24?si=chO3HbNLtJUYYCE7" target="_blank"><img src="..\images\s6.png" alt="Показ 6"></a>
-      <a class="cell" href="https://youtu.be/1OMWnXGqvXg?si=WW-Zb-z0svqry5CC" target="_blank"><img src="..\images\s7.png" alt="Показ 7"></a>
-      <a class="cell" href="https://youtu.be/-5Uugbxp0xw?si=TVJoxv87IXCjbeur" target="_blank"><img src="..\images\s8.png" alt="Показ 8"></a>
-      <a class="cell" href="https://youtu.be/K3rz9hEUUgM?si=stb8yycHoKOSrlFB" target="_blank"><img src="..\images\s9.png" alt="Показ 9"></a>
-      <a class="cell" href="https://youtu.be/ZpkjgPW3cjM?si=_0uZQY2rzmWNNTKZ" target="_blank"><img src="..\images\s10.png" alt="Показ 10"></a>
-      <a class="cell" href="https://youtu.be/_cqFnB7Mc1c?si=Ux6xbUlLZ0j22vHC" target="_blank"><img src="..\images\s11.png" alt="Показ 11"></a>
-      <a class="cell" href="https://youtu.be/Eh-AA8ryi-0?si=CsIv950HWOv3ymZu" target="_blank"><img src="..\images\s12.png" alt="Показ 12"></a>
-      <a class="cell" href="https://youtu.be/4QwENONFbDk?si=1s6YTnr08RVUJXNb" target="_blank"><img src="..\images\s13.png" alt="Показ 13"></a>
-      <a class="cell" href="https://youtu.be/iTeR5lOzwks?si=VviW-_KitNuD9DnV" target="_blank"><img src="..\images\s14.png" alt="Показ 14"></a>
-      <a class="cell" href="https://youtu.be/EzimVaF3O5k?si=n7gfDyasLO62LzZt" target="_blank"><img src="..\images\s15.png" alt="Показ 15"></a>
+      <a class="cell" href="https://youtu.be/gwK2ED6udSg?si=2WpDShM1FQVsLV17" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s1.png" alt="Показ 1"></div></a>
+      <a class="cell" href="https://youtu.be/Ocoumznrwzg?si=EqKBN3PuR8ga2SSq" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s2.png" alt="Показ 2"></div></a>
+      <a class="cell" href="https://youtu.be/KeLSMmprpCU?si=SMNw87cnAmzvAXo2" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s3.png" alt="Показ 3"></div></a>
+
+      <a class="cell" href="https://youtu.be/DH0MzbDxbLY?si=rqnyfgOj5IBgMDqu" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s4.png" alt="Показ 4"></div></a>
+      <a class="cell" href="https://youtu.be/2MgE3Im8eZY?si=Q3n4xXAaJNXL98P1" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s5.png" alt="Показ 5"></div></a>
+      <a class="cell" href="https://youtu.be/KsZOwn_PG24?si=chO3HbNLtJUYYCE7" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s6.png" alt="Показ 6"></div></a>
+
+      <a class="cell" href="https://youtu.be/1OMWnXGqvXg?si=WW-Zb-z0svqry5CC" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s7.png" alt="Показ 7"></div></a>
+      <a class="cell" href="https://youtu.be/-5Uugbxp0xw?si=TVJoxv87IXCjbeur" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s8.png" alt="Показ 8"></div></a>
+      <a class="cell" href="https://youtu.be/K3rz9hEUUgM?si=stb8yycHoKOSrlFB" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s9.png" alt="Показ 9"></div></a>
+
+      <a class="cell" href="https://youtu.be/ZpkjgPW3cjM?si=_0uZQY2rzmWNNTKZ" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s10.png" alt="Показ 10"></div></a>
+      <a class="cell" href="https://youtu.be/_cqFnB7Mc1c?si=Ux6xbUlLZ0j22vHC" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s11.png" alt="Показ 11"></div></a>
+      <a class="cell" href="https://youtu.be/Eh-AA8ryi-0?si=CsIv950HWOv3ymZu" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s12.png" alt="Показ 12"></div></a>
+
+      <a class="cell" href="https://youtu.be/4QwENONFbDk?si=1s6YTnr08RVUJXNb" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s13.png" alt="Показ 13"></div></a>
+      <a class="cell" href="https://youtu.be/iTeR5lOzwks?si=VviW-_KitNuD9DnV" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s14.png" alt="Показ 14"></div></a>
+      <a class="cell" href="https://youtu.be/EzimVaF3O5k?si=n7gfDyasLO62LzZt" target="_blank" rel="noopener"><div class="img-wrap"><img src="../images/s15.png" alt="Показ 15"></div></a>
     </div>
   </main>
 
-  <footer>© Rick Owens — сторінка Покази. Натисніть на фото, щоб переглянути відео в YouTube.</footer>
+  <footer class="site-footer">© Rick Owens — Покази</footer>
 
+  <script>
+  (function(){
+    const links = document.querySelectorAll('.main-nav a');
+    const path = location.pathname.split('/').pop().toLowerCase();
+    links.forEach(a=> {
+      const href = a.getAttribute('href').split('/').pop().toLowerCase();
+      if(href === path) a.classList.add('active'); else a.classList.remove('active');
+    });
+  })();
+  </script>
 </body>
 </html>

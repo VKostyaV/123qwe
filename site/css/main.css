@@ -1,0 +1,222 @@
+/* ----- Базові налаштування ----- */
+:root{
+  --max-width:1200px;
+  --page-padding:20px;
+  --gutter:24px;
+  --accent:#111;
+  --muted:#f7f7f7;
+  --muted-2:#f3f3f3;
+  --muted-text:#666;
+  --brand-font: "Playfair Display", serif;
+  --ui-font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--ui-font);
+  color:var(--accent);
+  background: #fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* ----- Контейнер ----- */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 calc(var(--page-padding));
+}
+
+/* --- Налаштовувані змінні для шапки --- */
+:root{
+  --header-height: 76px;        /* висота шапки — підкоригуй за потреби */
+  --header-side-pad: 60px;      /* відступи від країв — збільшує "вільний простір" */
+}
+
+/* --- Шапка сайту (оновлена) --- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  padding: 0;                  /* padding перенесено в .container для контролю */
+  z-index: 1000;
+
+  /* фон + blur (залишаємо blur) */
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(8px);
+
+  /* тонка нижня межа */
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+}
+
+/* Контейнер всередині шапки — тут керуємо відступами ліворуч/праворуч */
+.site-header .container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 calc(var(--header-side-pad)); /* <-- збільшуючи це, логотип "йде лівіше", меню "йде правіше" */
+  justify-content: space-between;
+}
+
+/* Логотип ліворуч точно приклеєний до лівого краю контейнера */
+.logo {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 4px;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+/* Навігація справа; додатково можна змінити відступ між пунктами */
+.main-nav {
+  display:flex;
+  gap: 22px;
+  margin-left: auto; /* гарантовано праворуч */
+}
+
+/* Колір/ховер як раніше */
+.main-nav a{ text-decoration:none; color:var(--text-color); font-weight:500; }
+.main-nav a:hover, .main-nav a.active{ color:#c33535; }
+
+/* --- Щоб шапка не закривала контент: --- */
+/* створюємо верхній відступ у тілі, рівний висоті шапки */
+body {
+  margin-top: calc(var(--header-height) + 20px); /* контент починається під шапкою + 20px, тому h1 не буде в зоні blur */
+}
+
+/* ----- H1 заголовки у стилі Rick Owens (центровка, літери розділені) ----- */
+.page-title {
+  font-family: 'Roboto', sans-serif; 
+  
+  font-weight: 100; 
+  
+  font-size: 29px; 
+  
+  text-align: center;
+  letter-spacing: 4px; 
+  margin: 36px 0 18px;
+}
+
+/* ----- Галерея (повна уніфікація для muses/show) ----- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:var(--gutter);
+  align-items:stretch;
+  margin:28px 0 56px;
+}
+
+/* адаптив */
+@media (max-width:980px){ .grid{ grid-template-columns:repeat(2,1fr);} }
+@media (max-width:560px){ .grid{ grid-template-columns:1fr; } }
+
+/* Ячейка галереї */
+.grid .cell{
+  position:relative;
+  overflow:hidden;         /* важливо: запобігає виходу зображення за рамки */
+  background:transparent;  /* ніяких рамок/тіней */
+  min-height:320px;        /* підлаштуй при потребі */
+  display:block;
+}
+
+/* обгортка зображення (щоб масштабування було плавним і не зрушувало розмітку) */
+.grid .cell .img-wrap{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+/* зображення: покриття, плавність, сильніший зум */
+.grid .cell img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition: transform 900ms cubic-bezier(.2,.8,.25,1), filter 900ms ease;
+  transform-origin:center center;
+  will-change:transform;
+  pointer-events:auto;
+}
+
+/* ховер: сильніше і плавніше */
+.grid .cell:hover img,
+.grid .cell:focus-within img{
+  transform:scale(1.14);         /* ~14% збільшення */
+  filter:brightness(0.98);       /* трохи затемнює для глибини */
+}
+
+/* зменшений зум на мобільних для кращого UX */
+@media (max-width:560px){
+  .grid .cell:hover img{ transform:scale(1.08); }
+  .grid .cell{ min-height:220px; }
+}
+
+/* ----- Lightbox (для muses) ----- */
+.lightbox{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.85);
+  z-index:1200;
+}
+.lightbox[aria-hidden="false"]{ display:flex; }
+.lb-inner{
+  width:92%;
+  max-width:1200px;
+  max-height:90vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.lb-content img{ max-width:100%; max-height:100%; object-fit:contain; display:block; }
+
+/* кнопки лайтбоксу */
+.lb-close, .lb-prev, .lb-next{
+  position:absolute;
+  background:transparent;
+  border:0;
+  color:#fff;
+  font-size:34px;
+  cursor:pointer;
+  padding:8px;
+}
+.lb-close{ top:12px; right:12px; font-size:28px; }
+.lb-prev{ left:8px; }
+.lb-next{ right:8px; }
+
+/* ----- Footer ----- */
+.site-footer{
+  padding:22px calc(var(--page-padding));
+  color:#999;
+  font-size:13px;
+  text-align:center;
+}
+
+/* ----- Кнопки стрілок (унифіковані для слайдерів/лайтбоксів) ----- */
+.btn-arrow{
+  background:transparent;
+  border:0;
+  font-size:34px;
+  cursor:pointer;
+  color:var(--accent);
+}
+
+/* ----- Політизовано: видалення inline-рамок у зображень / focus styles ----- */
+img{ border:0; outline:none; }
+a{ outline:none; }
+a:focus{ outline:2px solid rgba(0,0,0,0.06); outline-offset:3px; }
+
+/* ----- Додатково: плавне скролювання (гарніша навігація) ----- */
+html{ scroll-behavior:smooth; }

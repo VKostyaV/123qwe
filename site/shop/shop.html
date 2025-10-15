@@ -3,59 +3,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Магазини — Rick Owens</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="../css/shop.css">
-  
+  <title>Магазин — Rick Owens</title>
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="logo">R. O. | Дизайнер</div>
+      <nav class="main-nav" aria-label="Головне меню">
+        <a href="../index.html">Головна</a>
+        <a href="../muses/muses.html">Музи</a>
+        <a href="../shows/show.html">Покази</a>
+        <a href="shop.html" class="active">Магазин</a>
+        <a href="../about the author/AtA.html">Про автора</a>
+      </nav>
+    </div>
+  </header>
 
-  <header>
-    <div class="brand">R. O. | Дизайнер</div>
-    <nav aria-label="Головне меню">
-      <a href="..\index.html" >Головна</a>
-      <a href="..\muses\muses.html">Музи</a>
-      <a href="..\shows\show.html">Покази</a>
-      <a href="#" class="active">Магазин</a>
-      <a href="..\about the author\AtA.html">Про автора</a>
-    </nav>
-  </header>
+  <main class="container">
+    
+    <h1 class="page-title">П а р і з ь к и й &nbsp; &nbsp; &nbsp; п р о с т і р &nbsp; &nbsp; &nbsp; б р е н д у</h1>
+    <h1 class="page-title">R i c k &nbsp; &nbsp; O w e n s</h1>
 
-  <main>
-    <h1 class="title">П а р і з ь к и й  п р о с т і р  б р е н д у<br><span style="font-size:16px;letter-spacing:6px">Rick Owens</span></h1>
-    <p class="subtitle">Адреса та контакти магазину</p>
+    <div style="max-width:640px;margin:0 auto;text-align:center">
+      <div style="font-size:22px; margin-top:26px;"><a class="mailto" >Адреса</a>
+      <div style="font-size:14px; margin-top:15px"><a class="mailto" >130-133 GALERIE DE VALOIS, 75001 Paris, France</a>
+      <div style="margin-top:8px"><a class="mailto" href="mailto:STORE@RICKOWENSPARIS.COM">STORE@RICKOWENSPARIS.COM</a></div>
+      <div style="margin-top:6px"><a href="tel:+3314024252">+ 33 1 40 20 42 52</a></div>
 
-    <div class="center-block">
-      <div class="address">
-        <div><strong>130-133 GALERIE DE VALOIS, 75001 Paris, France</strong></div>
-        <div style="margin-top:6px"><a class="mailto" href="mailto:STORE@RICKOWENSPARIS.COM">STORE@RICKOWENSPARIS.COM</a></div>
-        <div style="margin-top:6px"><a href="tel:+3314024252">+ 33 1 40 20 42 52</a></div>
-        <div class="meta" style="margin-top:8px">OPEN<br>MONDAY TO SATURDAY FROM 11 A.M. TO 7 P.M.<br>CLOSED ON SUNDAY</div>
+      <div class="map-wrap" style="margin-top:18px;">
+        <iframe
+          src="https://www.google.com/maps?&q=130-133+Galerie+de+Valois,+75001+Paris,+France&output=embed"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
 
-      <!-- Інтерактивна Google карта -->
-      <iframe 
-        class="centered-map"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3137.315689262303!2d2.3378287166149616!3d48.864266274175385!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e24967782dd%3A0x270eabd3cf72da92!2zMTMwIEdhbCBkZSBWYWxvaXMsIDc1MDAxIFBhcmlzLCDQpNGA0LDQvdGG0ZbRjw!5e1!3m2!1suk!2sua!4v1760459965521!5m2!1suk!2sua" 
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-
-      <img class="store-photo" src="..\images\shop.png" alt="Інтер'єр магазину Rick Owens Paris">
-
-      <a class="insta" href="https://www.instagram.com/rickowensstoreparis/" target="_blank" rel="noopener noreferrer" aria-label="Rick Owens Store Paris в Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.2"/>
-          <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.2"/>
-          <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
-        </svg>
-      </a>
-
+      <img class="store-photo" src="../images/shop.png" alt="Інтер'єр магазину" style="max-width:520px;margin-top:22px">
+      <div style="margin-top:14px">
+        <a class="btn-arrow" href="https://www.instagram.com/rickowensstoreparis/" target="_blank" rel="noopener">Instagram ↗</a>
+      </div>
     </div>
   </main>
 
-  <footer>© Rick Owens — сторінка Магазини. Натисніть на контакти для виклику/пошти. Навігація зверху.</footer>
+  <footer class="site-footer">© Rick Owens — Магазин</footer>
 
+  <script>
+  (function(){
+    const links = document.querySelectorAll('.main-nav a');
+    const path = location.pathname.split('/').pop().toLowerCase();
+    links.forEach(a=>{
+      const href = a.getAttribute('href').split('/').pop().toLowerCase();
+      if(href === path) a.classList.add('active'); else a.classList.remove('active');
+    });
+  })();
+  </script>
 </body>
 </html>

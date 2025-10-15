@@ -4,189 +4,178 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Музи — Rick Owens</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/muses.css">
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-  <header>
-    <div class="brand">R. O. | Дизайнер</div>
-    <nav aria-label="Головне меню">
-      <a href="../index.html">Головна</a>
-      <a href="muses.html" class="active">Музи</a>
-      <a href="../shows/show.html">Покази</a>
-      <a href="../shop/shop.html">Магазин</a>
-      <a href="../about the author/AtA.html">Про автора</a>
-    </nav>
+  <header class="site-header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="logo">R. O. | Дизайнер</div>
+      <nav class="main-nav" aria-label="Головне меню">
+        <a href="../index.html">Головна</a>
+        <a href="muses.html">Музи</a>
+        <a href="../shows/show.html">Покази</a>
+        <a href="../shop/shop.html">Магазин</a>
+        <a href="../about the author/AtA.html">Про автора</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h1 class="title">М У З И</h1>
+  <main class="container">
+    <h1 class="page-title">М У З И</h1>
 
     <section class="gallery" aria-label="Галерея муз">
       <div class="grid" id="grid">
-        <!-- 12 cells: шляхи ../images/1.jpg ... ../images/12.jpg -->
-        <div class="cell" data-index="0" tabindex="0">
-          <div class="img-wrap"><img src="../images/m1.png" alt="Муза 1"></div>
-        </div>
-        <div class="cell" data-index="1" tabindex="0">
-          <div class="img-wrap"><img src="../images/m2.png" alt="Муза 2"></div>
-        </div>
-        <div class="cell" data-index="2" tabindex="0">
-          <div class="img-wrap"><img src="../images/m3.png" alt="Муза 3"></div>
-        </div>
+        <!-- 12 cells -->
+        <div class="cell" data-index="0" tabindex="0"><div class="img-wrap"><img src="../images/m1.png" alt="Муза 1"></div></div>
+        <div class="cell" data-index="1" tabindex="0"><div class="img-wrap"><img src="../images/m2.png" alt="Муза 2"></div></div>
+        <div class="cell" data-index="2" tabindex="0"><div class="img-wrap"><img src="../images/m3.png" alt="Муза 3"></div></div>
 
-        <div class="cell" data-index="3" tabindex="0">
-          <div class="img-wrap"><img src="../images/m4.png" alt="Муза 4"></div>
-        </div>
-        <div class="cell" data-index="4" tabindex="0">
-          <div class="img-wrap"><img src="../images/m5.png" alt="Муза 5"></div>
-        </div>
-        <div class="cell" data-index="5" tabindex="0">
-          <div class="img-wrap"><img src="../images/m6.png" alt="Муза 6"></div>
-        </div>
+        <div class="cell" data-index="3" tabindex="0"><div class="img-wrap"><img src="../images/m4.png" alt="Муза 4"></div></div>
+        <div class="cell" data-index="4" tabindex="0"><div class="img-wrap"><img src="../images/m5.png" alt="Муза 5"></div></div>
+        <div class="cell" data-index="5" tabindex="0"><div class="img-wrap"><img src="../images/m6.png" alt="Муза 6"></div></div>
 
-        <div class="cell" data-index="6" tabindex="0">
-          <div class="img-wrap"><img src="../images/m7.png" alt="Муза 7"></div>
-        </div>
-        <div class="cell" data-index="7" tabindex="0">
-          <div class="img-wrap"><img src="../images/m8.png" alt="Муза 8"></div>
-        </div>
-        <div class="cell" data-index="8" tabindex="0">
-          <div class="img-wrap"><img src="../images/m9.png" alt="Муза 9"></div>
-        </div>
+        <div class="cell" data-index="6" tabindex="0"><div class="img-wrap"><img src="../images/m7.png" alt="Муза 7"></div></div>
+        <div class="cell" data-index="7" tabindex="0"><div class="img-wrap"><img src="../images/m8.png" alt="Муза 8"></div></div>
+        <div class="cell" data-index="8" tabindex="0"><div class="img-wrap"><img src="../images/m9.png" alt="Муза 9"></div></div>
 
-        <div class="cell" data-index="9" tabindex="0">
-          <div class="img-wrap"><img src="../images/m10.png" alt="Муза 10"></div>
-        </div>
-        <div class="cell" data-index="10" tabindex="0">
-          <div class="img-wrap"><img src="../images/m11.png" alt="Муза 11"></div>
-        </div>
-        <div class="cell" data-index="11" tabindex="0">
-          <div class="img-wrap"><img src="../images/m12.png" alt="Муза 12"></div>
-        </div>
+        <div class="cell" data-index="9" tabindex="0"><div class="img-wrap"><img src="../images/m10.png" alt="Муза 10"></div></div>
+        <div class="cell" data-index="10" tabindex="0"><div class="img-wrap"><img src="../images/m11.png" alt="Муза 11"></div></div>
+        <div class="cell" data-index="11" tabindex="0"><div class="img-wrap"><img src="../images/m12.png" alt="Муза 12"></div></div>
       </div>
 
       <div class="hint">Наведiть щоб приблизити. Натисніть щоб відкрити.</div>
     </section>
   </main>
 
-  <!-- Lightbox / slider -->
+  <!-- Lightbox markup (уніфікований) -->
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Перегляд зображення">
     <div class="lb-inner" role="document">
       <button class="lb-prev" id="lbPrev" aria-label="Попереднє">‹</button>
-      <div class="lb-content" id="lbContent" tabindex="0">
-        <!-- large img injected here -->
-      </div>
+      <div class="lb-content" id="lbContent" tabindex="0"></div>
       <button class="lb-next" id="lbNext" aria-label="Наступне">›</button>
       <button class="lb-close" id="lbClose" aria-label="Закрити">✕</button>
       <div class="lb-caption" id="lbCaption" aria-hidden="true"></div>
     </div>
   </div>
 
+  <footer class="site-footer">© Rick Owens — Музи</footer>
+
   <script>
+  /* активний пункт меню */
   (function(){
-    const cells = Array.from(document.querySelectorAll('.cell'));
-    const lightbox = document.getElementById('lightbox');
-    const lbContent = document.getElementById('lbContent');
-    const lbClose = document.getElementById('lbClose');
-    const lbPrev = document.getElementById('lbPrev');
-    const lbNext = document.getElementById('lbNext');
-    const lbCaption = document.getElementById('lbCaption');
-
-    // build array of image srcs (keep same order as DOM)
-    const IMAGES = cells.map((c, i) => {
-      const img = c.querySelector('img');
-      return { src: img.getAttribute('src'), alt: img.getAttribute('alt') || ('Image ' + (i+1)) };
+    const links = document.querySelectorAll('.main-nav a');
+    const path = location.pathname.split('/').pop().toLowerCase();
+    links.forEach(a=>{
+      const href = a.getAttribute('href').split('/').pop().toLowerCase();
+      if(href === path) a.classList.add('active'); else a.classList.remove('active');
     });
+  })();
+  </script>
 
-    let current = 0;
+  <script>
+    (function(){
+      const cells = Array.from(document.querySelectorAll('.cell'));
+      const lightbox = document.getElementById('lightbox');
+      const lbContent = document.getElementById('lbContent');
+      const lbClose = document.getElementById('lbClose');
+      const lbPrev = document.getElementById('lbPrev');
+      const lbNext = document.getElementById('lbNext');
+      const lbCaption = document.getElementById('lbCaption');
 
-    function openAt(index){
-      current = (index + IMAGES.length) % IMAGES.length;
-      show();
-      lightbox.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden'; // prevent background scroll
-      lbClose.focus();
-    }
+      // build array of image srcs (keep same order as DOM)
+      const IMAGES = cells.map((c, i) => {
+        const img = c.querySelector('img');
+        return { src: img.getAttribute('src'), alt: img.getAttribute('alt') || ('Image ' + (i+1)) };
+      });
 
-    function show(){
-      lbContent.innerHTML = '';
-      const data = IMAGES[current];
-      const img = document.createElement('img');
-      img.src = data.src;
-      img.alt = data.alt;
-      lbContent.appendChild(img);
-      lbCaption.textContent = data.alt;
-      lbCaption.setAttribute('aria-hidden','false');
-    }
+      let current = 0;
 
-    function close(){
-      lightbox.setAttribute('aria-hidden', 'true');
-      lbContent.innerHTML = '';
-      document.body.style.overflow = '';
-      lbCaption.setAttribute('aria-hidden','true');
-    }
+      function openAt(index){
+        current = (index + IMAGES.length) % IMAGES.length;
+        show();
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden'; // prevent background scroll
+        lbClose.focus();
+      }
 
-    // attach click handlers to cells
-    cells.forEach(c => {
-      const idx = parseInt(c.dataset.index,10);
-      c.addEventListener('click', ()=> openAt(idx));
-      // keyboard accessibility: Enter / Space opens
-      c.addEventListener('keydown', (e)=>{
-        if(e.key === 'Enter' || e.key === ' '){
-          e.preventDefault();
-          openAt(idx);
+      function show(){
+        lbContent.innerHTML = '';
+        const data = IMAGES[current];
+        const img = document.createElement('img');
+        img.src = data.src;
+        img.alt = data.alt;
+        lbContent.appendChild(img);
+        lbCaption.textContent = data.alt;
+        lbCaption.setAttribute('aria-hidden','false');
+      }
+
+      function close(){
+        lightbox.setAttribute('aria-hidden', 'true');
+        lbContent.innerHTML = '';
+        document.body.style.overflow = '';
+        lbCaption.setAttribute('aria-hidden','true');
+      }
+
+      // attach click handlers to cells
+      cells.forEach(c => {
+        const idx = parseInt(c.dataset.index,10);
+        c.addEventListener('click', ()=> openAt(idx));
+        // keyboard accessibility: Enter / Space opens
+        c.addEventListener('keydown', (e)=>{
+          if(e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            openAt(idx);
+          }
+        });
+      });
+
+      lbClose.addEventListener('click', close);
+      lbPrev.addEventListener('click', ()=> { current = (current - 1 + IMAGES.length) % IMAGES.length; show(); });
+      lbNext.addEventListener('click', ()=> { current = (current + 1) % IMAGES.length; show(); });
+
+      // keyboard nav
+      document.addEventListener('keydown', (e)=>{
+        if(lightbox.getAttribute('aria-hidden') === 'false'){
+          if(e.key === 'Escape'){ close(); }
+          if(e.key === 'ArrowLeft'){ current = (current - 1 + IMAGES.length) % IMAGES.length; show(); }
+          if(e.key === 'ArrowRight'){ current = (current + 1) % IMAGES.length; show(); }
         }
       });
-    });
 
-    lbClose.addEventListener('click', close);
-    lbPrev.addEventListener('click', ()=> { current = (current - 1 + IMAGES.length) % IMAGES.length; show(); });
-    lbNext.addEventListener('click', ()=> { current = (current + 1) % IMAGES.length; show(); });
+      // click outside content closes
+      lightbox.addEventListener('click', (e)=>{
+        if(e.target === lightbox) close();
+      });
 
-    // keyboard nav
-    document.addEventListener('keydown', (e)=>{
-      if(lightbox.getAttribute('aria-hidden') === 'false'){
-        if(e.key === 'Escape'){ close(); }
-        if(e.key === 'ArrowLeft'){ current = (current - 1 + IMAGES.length) % IMAGES.length; show(); }
-        if(e.key === 'ArrowRight'){ current = (current + 1) % IMAGES.length; show(); }
+      // prefetch next/prev images for smoother nav
+      function prefetch(n){
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = n;
+        document.head.appendChild(link);
+        setTimeout(()=> link.parentNode && link.parentNode.removeChild(link), 2000);
       }
-    });
 
-    // click outside content closes
-    lightbox.addEventListener('click', (e)=>{
-      if(e.target === lightbox) close();
-    });
+      // when showing, preload neighbors
+      const origShow = show;
+      show = function(){
+        origShow();
+        const next = IMAGES[(current + 1) % IMAGES.length].src;
+        const prev = IMAGES[(current - 1 + IMAGES.length) % IMAGES.length].src;
+        prefetch(next); prefetch(prev);
+      };
 
-    // prefetch next/prev images for smoother nav
-    function prefetch(n){
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'image';
-      link.href = n;
-      document.head.appendChild(link);
-      setTimeout(()=> link.parentNode && link.parentNode.removeChild(link), 2000);
-    }
+      // improve touch UX: swipe in lightbox
+      let startX = 0;
+      lbContent.addEventListener('touchstart', (e)=> { startX = e.touches[0].clientX; });
+      lbContent.addEventListener('touchend', (e)=> {
+        const dx = e.changedTouches[0].clientX - startX;
+        if(dx > 40) { current = (current - 1 + IMAGES.length) % IMAGES.length; show(); }
+        if(dx < -40) { current = (current + 1) % IMAGES.length; show(); }
+      });
 
-    // when showing, preload neighbors
-    const origShow = show;
-    show = function(){
-      origShow();
-      const next = IMAGES[(current + 1) % IMAGES.length].src;
-      const prev = IMAGES[(current - 1 + IMAGES.length) % IMAGES.length].src;
-      prefetch(next); prefetch(prev);
-    };
-
-    // improve touch UX: swipe in lightbox
-    let startX = 0;
-    lbContent.addEventListener('touchstart', (e)=> { startX = e.touches[0].clientX; });
-    lbContent.addEventListener('touchend', (e)=> {
-      const dx = e.changedTouches[0].clientX - startX;
-      if(dx > 40) { current = (current - 1 + IMAGES.length) % IMAGES.length; show(); }
-      if(dx < -40) { current = (current + 1) % IMAGES.length; show(); }
-    });
-
-  })();
+    })();
   </script>
 </body>
 </html>
