@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Реєстрація — Rick Owens</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+            <div class="logo">R. O. | Дизайнер</div>
+            <nav class="main-nav" aria-label="Головне меню">
+                <a href="../index.html">Головна</a>
+                <a href="../muses/muses.html">Музи</a>
+                <a href="../shows/show.html">Покази</a>
+                <a href="../shop/shop.html">Магазин</a>
+                <a href="register.html" class="active">Реєстрація</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title" style="text-align:center; margin-top: 40px;">REGISTRATION</h1>
+
+        <form id="regForm" novalidate>
+            <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Your Name" required />
+                <div id="nameErrors" class="errors"></div>
+            </div>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="email@example.com" required />
+                <div id="emailErrors" class="errors"></div>
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" autocomplete="new-password" placeholder="********" required />
+                <div id="passwordErrors" class="errors"></div>
+            </div>
+
+            <button id="submitBtn" type="submit" disabled>Register</button>
+            <div id="status" style="margin-top:10px; text-align:center; font-weight:bold;"></div>
+        </form>
+    </main>
+
+    <script src="../js/reg.js"></script>
+</body>
+</html>
